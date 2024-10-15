@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>Percabangan JavaScript</title>
-  </head>
-  <body>
-    <script language="JavaScript"
+</head>
+<body>
+    <p>
+    <script language="JavaScript">
+        let nama = "NAMA ANDA";
+        document.write(("Halo " + nama + "!<br>").repeat(5));
+    </script>
+    </p>
 
-      let nama = "Indah Mauliya";
-
-      document.write(("Halo" + nama + "!</br>".repeat(5));
-      
-  </body>
+    <script>
+        let barang = ["Barang 1", "Barang 2", "Barang 3"];
+        for (indeks in barang) {
+            document.write("<p>barang nomor " + indeks + " : " + barang[indeks] + "</p>");
+        }
+    </script>
+</body>
+</html>
