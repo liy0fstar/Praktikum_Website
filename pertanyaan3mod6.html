@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Bonus Pelanggan Salon</title>
+    <script>
+        function cekBonus() {
+            let totalKunjungan = parseInt(prompt("Masukkan total kunjungan ke salon: "));
+            let kupon = totalKunjungan;
+            let bonus = Math.floor(totalKunjungan / 10);
+
+            if (bonus > 0) {
+                console.log(`Total Kunjungan: ${totalKunjungan}`);
+                console.log(`Anda memiliki ${kupon} kupon.`);
+                console.log(`Selamat! Anda mendapatkan ${bonus} kunjungan gratis.`);
+            } else {
+                console.log(`Total Kunjungan: ${totalKunjungan}`);
+                console.log(`Anda memiliki ${kupon} kupon.`);
+                console.log("Belum cukup kunjungan untuk mendapatkan kunjungan gratis.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Perhitungan Bonus Pelanggan Salon</h1>
+    <button onclick="cekBonus()">Cek Bonus</button>
+</body>
+</html>
