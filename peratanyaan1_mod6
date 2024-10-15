@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Membership Restoran</title>
+    <script type="text/javascript">
+        
+        function cekMembership(nama, membership) {
+            if (membership) {
+                console.log(nama + " mendapatkan diskon 5%");
+            } else {
+                console.log(nama + " tidak mendapatkan diskon");
+            }
+        }
+
+        function cekDiskon() {
+            let lenaMembership = true;  // Lena memiliki membership
+            let rioMembership = false;  // Rio tidak memiliki membership
+
+            cekMembership("Lena", lenaMembership);  // Pengecekan untuk Lena
+            cekMembership("Rio", rioMembership);    // Pengecekan untuk Rio
+        }
+    </script>
+</head>
+<body onload="cekDiskon()">
+    <h1>Pengecekan Membership Restoran</h1>
+    <p>Periksa Console untuk hasilnya.</p>
+</body>
+</html>
