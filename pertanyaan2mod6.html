@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Kelulusan Siswa</title>
+    <script>
+        function cekKelulusan() {
+            const standarKelulusan = 60;
+            const siswa = [
+                { nama: "Rafi, nilai: { matematika: 70, biologi: 80, fisika: 70, kimia: 90 } },
+                { nama: "Laila", nilai: { matematika: 90, biologi: 65, fisika: 80, kimia: 70 } },
+                { nama: "Pucay", nilai: { matematika: 100, biologi: 70, fisika: 95, kimia: 50 } },
+                { nama: "Hania", nilai: { matematika: 60, biologi: 60, fisika: 70, kimia: 60 } },
+                { nama: "Najwa", nilai: { matematika: 70, biologi: 100, fisika: 80, kimia: 75 } }
+            ];
+
+            let lulusSemua = true;
+            let tidakLulusSemua = true;
+            let hasilKelulusan = "";
+
+            siswa.forEach(s => {
+                const { matematika, biologi, fisika, kimia } = s.nilai;
+                const lulus = (matematika >= standarKelulusan) && (biologi >= standarKelulusan) && 
+                              (fisika >= standarKelulusan) && (kimia >= standarKelulusan);
+
+                if (lulus) {
+                    hasilKelulusan += `${s.nama} Lulus<br>`;
+                    tidakLulusSemua = false;
+                } else {
+                    hasilKelulusan += `${s.nama} Tidak Lulus<br>`;
+                    lulusSemua = false;
+                }
+            });
+
+            if (lulusSemua) {
+                hasilKelulusan = "Semua Lulus";
+            } else if (tidakLulusSemua) {
+                hasilKelulusan = "Semua Tidak Lulus";
+            }
+
+            document.getElementById("hasil").innerHTML = hasilKelulusan;
+        }
+    </script>
+</head>
+<body>
+    <h1>Status Kelulusan Siswa</h1>
+    <button onclick="cekKelulusan()">Cek Kelulusan</button>
+    <p id="hasil"></p>
+</body>
+</html>
